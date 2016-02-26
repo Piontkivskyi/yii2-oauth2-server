@@ -43,7 +43,7 @@ class Mongo extends \OAuth2\Storage\Mongo implements PublicKeyInterface, ScopeIn
 		if ($result = $this->collection('client_table')->findOne([
 			'$or' => [
 				['client_id' => $client_id],
-				['client_id' => new \MongoId($client_id)]
+				//['client_id' => new \MongoId($client_id)]
 			]
 		])
 		) {
@@ -58,7 +58,7 @@ class Mongo extends \OAuth2\Storage\Mongo implements PublicKeyInterface, ScopeIn
 		if (!$result = $this->collection('client_table')->findOne([
 			'$or' => [
 				['client_id' => $client_id],
-				['client_id' => new \MongoId($client_id)]
+				//['client_id' => new \MongoId($client_id)]
 			]
 		])
 		) {
@@ -74,7 +74,7 @@ class Mongo extends \OAuth2\Storage\Mongo implements PublicKeyInterface, ScopeIn
 		$result = $this->collection('client_table')->findOne([
 			'$or' => [
 				['client_id' => $client_id],
-				['client_id' => new \MongoId($client_id)]
+				//['client_id' => new \MongoId($client_id)]
 			]
 		]);
 
@@ -334,13 +334,13 @@ class Mongo extends \OAuth2\Storage\Mongo implements PublicKeyInterface, ScopeIn
 	public function getJti($client_id, $subject, $audience, $expiration, $jti)
 	{
 		//TODO: Needs mongodb implementation.
-		throw new \Exception('getJti() for the MongoDB driver is currently unimplemented.');
+		//throw new \Exception('getJti() for the MongoDB driver is currently unimplemented.');
 	}
 
 	public function setJti($client_id, $subject, $audience, $expiration, $jti)
 	{
 		//TODO: Needs mongodb implementation.
-		throw new \Exception('setJti() for the MongoDB driver is currently unimplemented.');
+		//throw new \Exception('setJti() for the MongoDB driver is currently unimplemented.');
 	}
 
 	/***** @TODO need tests ****** */
@@ -353,7 +353,7 @@ class Mongo extends \OAuth2\Storage\Mongo implements PublicKeyInterface, ScopeIn
 		if (!$result = $this->collection('public_key_table')->findOne([
 			'$or' => [
 				['client_id' => $client_id],
-				['client_id' => new \MongoId($client_id)]
+				//['client_id' => new \MongoId($client_id)]
 			]
 		])
 		) {
@@ -368,7 +368,7 @@ class Mongo extends \OAuth2\Storage\Mongo implements PublicKeyInterface, ScopeIn
 		if (!$result = $this->collection('public_key_table')->findOne([
 			'$or' => [
 				['client_id' => $client_id],
-				['client_id' => new \MongoId($client_id)]
+				//['client_id' => new \MongoId($client_id)]
 			]
 		])
 		) {
@@ -424,6 +424,6 @@ class Mongo extends \OAuth2\Storage\Mongo implements PublicKeyInterface, ScopeIn
 //		return null;
 
 		//TODO: Needs mongodb implementation.
-		throw new \Exception('getDefaultScope() for the MongoDB driver is currently unimplemented.');
+		//throw new \Exception('getDefaultScope() for the MongoDB driver is currently unimplemented.');
 	}
 }
